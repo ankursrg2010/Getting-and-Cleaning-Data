@@ -101,12 +101,6 @@ New <- Data %>% group_by(subject_id, activity) %>% summarise_each(funs(mean))
 names(New) <- gsub("\\.", "", names(New))
 write.table(x = New, file="Result.txt", row.name=FALSE)
 
-###----------------Tiding new data------------------------------------------
-
-#bad_features <- names(New)[grep("[XYZ]", names(New))]
-#temp <- unique(unlist(strsplit(bad_features, split="\\.\\.\\.")))
-#measurement <- setdiff(temp, c("X", "Y", "Z"))
-
 
 ###----------------Memory Cleaning------------------------------------------
 
